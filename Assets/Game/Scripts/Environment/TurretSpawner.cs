@@ -4,6 +4,7 @@ using TowerDefender.Commons;
 using TowerDefender.Game.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using static UnityEngine.GraphicsBuffer;
 
 namespace TowerDefender.Game.UI
 {
@@ -31,7 +32,16 @@ namespace TowerDefender.Game.UI
             ClearSelectedTurret();
 
             _turretProfile = turretProfile;
-            turret = Instantiate(turretProfile.Prefab, transform);
+            InstantiateTurret();
+        }
+        private void InstantiateTurret()
+        {
+            turret = Instantiate(_turretProfile.Prefabs.Turret, transform);
+            turret.name = _turretProfile.Prefabs.Turret.name;
+
+            var maxRange = Instantiate(_turretProfile.Prefabs.Range, turret.transform);
+            maxRange.name = "Range";
+            maxRange.DrawCircle(20, _turretProfile.RadiusRange);
         }
         private void ClearSelectedTurret()
         {
@@ -50,7 +60,9 @@ namespace TowerDefender.Game.UI
 
             if (Input.GetMouseButtonDown(0))
             {
-                Instantiate(turret, turret.transform.position, Quaternion.identity, turretRoot);
+                var finalTurret = Instantiate(turret, turret.transform.position, Quaternion.identity, turretRoot);
+                finalTurret.name = turret.name;
+
                 AllServices.CoinService.Remove(_turretProfile.BuildCost);
                 _buildAudioSource.Play();
             }
