@@ -13,7 +13,6 @@ namespace TowerDefender.Application
             ServiceLocator.Initiailze();
             ServiceLocator.Current.Register<IGameDataService>(new GameDataService());
             ServiceLocator.Current.Register<ICoinService>(new CoinService());
-            ServiceLocator.Current.Register<IScoreService>(new ScoreService());
 
             AllServices.Load();
 
