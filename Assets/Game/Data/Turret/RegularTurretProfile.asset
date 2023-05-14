@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Prefab: {fileID: 3312728997542272041, guid: ad95cf0532fb840edb99302196037be4, type: 3}
   ProjectileProfile: {fileID: 0}
+  FiringFrequency: 2
+  BuildCost: 5
+  icon: {fileID: 21300000, guid: 5c30c18c4681fa44f888d42fc3266dec, type: 3}
   RadiusRange:
     Min: 1
     Max: 5
-  Cost: 5
