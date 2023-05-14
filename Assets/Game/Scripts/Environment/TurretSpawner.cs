@@ -46,14 +46,14 @@ namespace TowerDefender.Game.UI
             if (EventSystem.current.IsPointerOverGameObject())
                 return;
 
-            if (_turretProfile.BuildCost > AllServices.GameDataService.Coins)
-                return;
-
             if (Input.GetMouseButtonDown(0))
             {
                 Instantiate(turret, turret.transform.position, Quaternion.identity, turretRoot);
                 AllServices.CoinService.Remove(_turretProfile.BuildCost);
             }
+
+            if (_turretProfile.BuildCost > AllServices.CoinService.Coins)
+                ClearSelectedTurret();
         }
         private void DisableTurretSpawner()
         {

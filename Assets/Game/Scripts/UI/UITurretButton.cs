@@ -35,6 +35,6 @@ namespace TowerDefender.Game.UI
             turretSpawner.Show(_turretProfile);
             EventSystem.current.SetSelectedGameObject(null);
         }
-        private void OnCoinsChanged() => _button.interactable = AllServices.GameDataService.Coins >= _turretProfile.BuildCost;
+        private void OnCoinsChanged() => _button.interactable = AllServices.CoinService.Coins >= _turretProfile.BuildCost;
     }
 }

@@ -13,6 +13,6 @@ namespace TowerDefender.Game.UI
         private void Start() => OnCoinsChanged();
         private void OnDestroy() => AllServices.CoinService.OnCoinsChanged.RemoveListener(OnCoinsChanged);
         
-        private void OnCoinsChanged() => _label.text = AllServices.GameDataService.Coins.ToString();
+        private void OnCoinsChanged() => _label.text = AllServices.CoinService.Coins.ToString();
     }
 }
