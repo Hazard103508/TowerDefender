@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6631560805576656205}
   m_Layer: 0
-  m_Name: Turret-regular
+  m_Name: FreezingTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -89,7 +89,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d5319d49310644d7aad9c0c8a3972fbc, type: 2}
+  - {fileID: 2100000, guid: 023e39384ae74458891be256b9386489, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
