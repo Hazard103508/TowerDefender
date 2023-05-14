@@ -10,6 +10,8 @@ namespace TowerDefender.Game.UI
     public class TurretSpawner : MonoBehaviour
     {
         [SerializeField] private Transform turretRoot;
+        [SerializeField] private AudioSource _buildAudioSource;
+
         private AttachObjectToMouse _attachObjectToMouse;
         private TurretProfile _turretProfile;
         private GameObject turret;
@@ -50,6 +52,7 @@ namespace TowerDefender.Game.UI
             {
                 Instantiate(turret, turret.transform.position, Quaternion.identity, turretRoot);
                 AllServices.CoinService.Remove(_turretProfile.BuildCost);
+                _buildAudioSource.Play();
             }
 
             if (_turretProfile.BuildCost > AllServices.CoinService.Coins)
