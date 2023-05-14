@@ -16,6 +16,8 @@ namespace TowerDefender.Application
             ServiceLocator.Current.Register<IScoreService>(new ScoreService());
 
             AllServices.Load();
+
+            AllServices.GameDataService.Coins = 10; // temporal
         }
     }
 }
