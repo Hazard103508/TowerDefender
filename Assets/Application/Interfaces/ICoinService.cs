@@ -5,6 +5,7 @@ namespace TowerDefender.Application.Interfaces
     public interface ICoinService : IGameService
     {
         UnityEvent OnCoinsChanged { get; set; }
-        void Add();
+        void Add(int amount);
+        void Remove(int amount);
     }
 }

@@ -1,5 +1,7 @@
+using TowerDefender.Application.Services;
 using TowerDefender.Game.ScriptableObjects;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace TowerDefender.Game.UI
@@ -16,7 +18,10 @@ namespace TowerDefender.Game.UI
         private void Awake()
         {
             _button = GetComponent<Button>();
+            
         }
+        private void Start() => AllServices.CoinService.OnCoinsChanged.AddListener(OnCoinsChanged);
+        private void OnDestroy() => AllServices.CoinService.OnCoinsChanged.RemoveListener(OnCoinsChanged);
         public void Initialize(TurretProfile turretProfile)
         {
             _turretProfile = turretProfile;
@@ -25,6 +30,11 @@ namespace TowerDefender.Game.UI
 
             _button.onClick.AddListener(OnButtonClick);
         }
-        private void OnButtonClick() => turretSpawner.Show(_turretProfile);
+        private void OnButtonClick()
+        {
+            turretSpawner.Show(_turretProfile);
+            EventSystem.current.SetSelectedGameObject(null);
+        }
+        private void OnCoinsChanged() => _button.interactable = AllServices.GameDataService.Coins >= _turretProfile.BuildCost;
     }
 }

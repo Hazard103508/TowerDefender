@@ -13,9 +13,14 @@ namespace TowerDefender.Application.Services
 
         public UnityEvent OnCoinsChanged { get; set; }
 
-        public void Add()
+        public void Add(int amount)
         {
-            AllServices.GameDataService.Coins++;
+            AllServices.GameDataService.Coins += amount;
+            OnCoinsChanged.Invoke();
+        }
+        public void Remove(int amount)
+        {
+            AllServices.GameDataService.Coins -= amount;
             OnCoinsChanged.Invoke();
         }
     }
