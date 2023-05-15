@@ -1,3 +1,4 @@
+using TowerDefender.Application.Services;
 using TowerDefender.Game.ScriptableObjects;
 using TowerDefender.Game.UI;
 using UnityEngine;
@@ -9,16 +10,14 @@ namespace TowerDefender.Game.Environment
         [SerializeField] EnemyProfile enemyProfile;
         [SerializeField] UILifeBar uILifeBar;
 
-        public Vector3 GoalPosition;
-
-        private void Awake()
+        private void Start() // TODO - AWAKE
         {
             uILifeBar.CurrentHP = uILifeBar.MaxHP = enemyProfile.DefaultHP;
-            transform.LookAt(GoalPosition);
+            transform.LookAt(AllServices.MatchService.DefaultMatchProfile.TowerPosition);
         }
         private void Update()
         {
-            transform.position = Vector3.MoveTowards(transform.position, GoalPosition, enemyProfile.Speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, AllServices.MatchService.DefaultMatchProfile.TowerPosition, enemyProfile.Speed * Time.deltaTime);
         }
 
         public void AddDamage(int amount)

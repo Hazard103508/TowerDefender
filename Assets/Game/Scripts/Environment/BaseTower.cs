@@ -9,7 +9,7 @@ namespace TowerDefender.Game.Environment
     {
         [SerializeField] UILifeBar uILifeBar;
 
-        private void Start()
+        private void Start() // TODO - AWAKE
         {
             uILifeBar.CurrentHP = uILifeBar.MaxHP = AllServices.MatchService.DefaultMatchProfile.HP;
             transform.position = AllServices.MatchService.DefaultMatchProfile.TowerPosition;

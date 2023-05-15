@@ -10,14 +10,9 @@ namespace TowerDefender.Game.UI
     {
         [SerializeField] private Transform turretRoot;
         [SerializeField] private AudioSource _buildAudioSource;
-
-        private AttachObjectToMouse _attachObjectToMouse;
+        [SerializeField] private AttachObjectToMouse _attachObjectToMouse;
         private Turret _turret;
 
-        private void Awake()
-        {
-            _attachObjectToMouse = GetComponent<AttachObjectToMouse>();
-        }
         private void Update()
         {
             PlaceTurret();

@@ -12,15 +12,13 @@ namespace TowerDefender.Game.UI
         [SerializeField] private TurretSpawner turretSpawner;
         [SerializeField] private Image _icon;
         [SerializeField] private Text _label;
-        private Button _button;
+        [SerializeField] private Button _button;
         private Turret _turret;
 
-        private void Awake()
+        private void Start() // TODO - AWAKE
         {
-            _button = GetComponent<Button>();
-
+            AllServices.CoinService.OnCoinsChanged.AddListener(OnCoinsChanged);
         }
-        private void Start() => AllServices.CoinService.OnCoinsChanged.AddListener(OnCoinsChanged);
         private void OnDestroy() => AllServices.CoinService.OnCoinsChanged.RemoveListener(OnCoinsChanged);
         public void Initialize(Turret turret)
         {
