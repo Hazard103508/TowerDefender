@@ -6,9 +6,9 @@ namespace TowerDefender.Game.ScriptableObjects
     [CreateAssetMenu(fileName = "EnemyProfile", menuName = "ScriptableObjects/Game/EnemyProfile", order = 3)]
     public class EnemyProfile : ScriptableObject
     {
-        public float DefaultHP;
+        public int DefaultHP;
         public float Speed;
-        public float DamagePoint;
+        public int DamagePoint;
         public int goldReward;
     }
 }

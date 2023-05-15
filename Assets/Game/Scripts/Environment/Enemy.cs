@@ -7,16 +7,16 @@ namespace TowerDefender.Game.Environment
 {
     public class Enemy : MonoBehaviour
     {
-        [SerializeField] EnemyProfile enemyProfile;
+        public EnemyProfile EnemyProfile;
         [SerializeField] UILifeBar uILifeBar;
 
         private void Start() // TODO - AWAKE
         {
-            uILifeBar.CurrentHP = uILifeBar.MaxHP = enemyProfile.DefaultHP;
+            uILifeBar.CurrentHP = uILifeBar.MaxHP = EnemyProfile.DefaultHP;
         }
         private void Update()
         {
-            transform.position = Vector3.MoveTowards(transform.position, AllServices.MatchService.DefaultMatchProfile.TowerPosition, enemyProfile.Speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, AllServices.MatchService.DefaultMatchProfile.TowerPosition, EnemyProfile.Speed * Time.deltaTime);
         }
 
         public void AddDamage(int amount)

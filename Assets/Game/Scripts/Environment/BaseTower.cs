@@ -7,7 +7,8 @@ namespace TowerDefender.Game.Environment
 {
     public class BaseTower : MonoBehaviour
     {
-        [SerializeField] UILifeBar uILifeBar;
+        [SerializeField] private UILifeBar uILifeBar;
+        [SerializeField] private AudioSource _damageAudio;
 
         private void Start() // TODO - AWAKE
         {
@@ -15,9 +16,19 @@ namespace TowerDefender.Game.Environment
             transform.position = AllServices.MatchService.DefaultMatchProfile.TowerPosition;
         }
 
-        public void AddDamage(int amount)
+        private void TakeDamage(int amount)
         {
             uILifeBar.CurrentHP -= amount;
+            _damageAudio.Play();
+        }
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject != null && other.gameObject.CompareTag("Enemy"))
+            {
+                var enemy = other.gameObject.GetComponent<Enemy>();
+                TakeDamage(enemy.EnemyProfile.DamagePoint);
+                Destroy(enemy.gameObject);
+            }
         }
     }
 }

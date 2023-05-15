@@ -30,7 +30,6 @@ namespace TowerDefender.Game.Environment
             var position = AllServices.MatchService.DefaultMatchProfile.SpawnPoints.Choose(1).First();
 
             var enemy = Instantiate(prefab, EnemiesRoot);
-            enemy.gameObject.SetActive(true);
             enemy.transform.position = position;
             enemy.transform.LookAt(AllServices.MatchService.DefaultMatchProfile.TowerPosition);
             _spawnCount++;

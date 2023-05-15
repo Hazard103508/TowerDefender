@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffd14076a5ae2c746a45b355e955e4f9, type: 3}
   m_Name: Creep-big
   m_EditorClassIdentifier: 
-  DefaultHP: 100
-  Speed: 5
-  DamagePoint: 10
-  goldReward: 5
+  DefaultHP: 500
+  Speed: 3
+  DamagePoint: 30
+  goldReward: 10
