@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyCount: 15
   SpawnFrequency: 1
+  CoolDownTime: 3

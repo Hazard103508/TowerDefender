@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace TowerDefender.Game.Environment
 {
-    public class EnemySpawner : MonoBehaviour
+    public class WaveSpawner : MonoBehaviour
     {
         [SerializeField] private WaveProfile waveProfile;
         [SerializeField] private Transform EnemiesRoot;
@@ -18,13 +18,30 @@ namespace TowerDefender.Game.Environment
         private void Start()
         {
             InitializeSpawn();  // ver...
+
         }
         public void InitializeSpawn()
         {
             _spawnCount = 0;
-            Invoke("SpawnEnemy", waveProfile.CoolDownTime);
+            AllServices.MatchService.MatchState = MatchState.CoolDown;
+            StartCoroutine(ShowColdDown());
         }
-        public void SpawnEnemy()
+        private IEnumerator ShowColdDown()
+        {
+            int _timer = waveProfile.CoolDownTime;
+
+            do
+            {
+                AllServices.MatchService.Timer = _timer--;
+                yield return new WaitForSeconds(1);
+            }
+            while (_timer > 0);
+
+            AllServices.MatchService.Timer = 0;
+            AllServices.MatchService.MatchState = MatchState.Invasion;
+            Invoke("SpawnEnemy", 0);
+        }
+        private void SpawnEnemy()
         {
             var prefab = AllServices.MatchService.DefaultMatchProfile.Enemies.Choose(1).First();
             var position = AllServices.MatchService.DefaultMatchProfile.SpawnPoints.Choose(1).First();

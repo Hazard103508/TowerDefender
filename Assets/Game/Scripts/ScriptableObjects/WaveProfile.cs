@@ -8,6 +8,6 @@ namespace TowerDefender.Game.ScriptableObjects
     {
         public int EnemyCount;
         public float SpawnFrequency;
-        public float CoolDownTime;
+        public int CoolDownTime;
     }
 }
