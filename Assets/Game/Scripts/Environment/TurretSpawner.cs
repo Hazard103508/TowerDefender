@@ -1,11 +1,8 @@
-using System.Reflection;
 using TowerDefender.Application.Services;
 using TowerDefender.Commons;
 using TowerDefender.Game.Environment;
-using TowerDefender.Game.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using static UnityEngine.GraphicsBuffer;
 
 namespace TowerDefender.Game.UI
 {
@@ -38,7 +35,7 @@ namespace TowerDefender.Game.UI
         {
             _turret = Instantiate(_turret, transform);
             _turret.name = _turret.TurretProfile.name;
-         }
+        }
         private void ClearSelectedTurret()
         {
             if (_turret != null)
@@ -48,19 +45,19 @@ namespace TowerDefender.Game.UI
         {
             if (_turret == null)
                 return;
-            
+
             if (EventSystem.current.IsPointerOverGameObject())
                 return;
-            
+
             if (Input.GetMouseButtonDown(0))
             {
                 var finalTurret = Instantiate(_turret, _turret.transform.position, Quaternion.identity, turretRoot);
                 finalTurret.name = _turret.name;
-            
+
                 AllServices.CoinService.Remove(_turret.TurretProfile.BuildCost);
                 _buildAudioSource.Play();
             }
-            
+
             if (_turret.TurretProfile.BuildCost > AllServices.CoinService.Coins)
                 ClearSelectedTurret();
         }

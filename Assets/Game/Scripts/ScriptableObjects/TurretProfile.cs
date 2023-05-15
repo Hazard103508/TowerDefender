@@ -1,6 +1,3 @@
-using System;
-using TowerDefender.Commons;
-using TowerDefender.Game.Environment;
 using UnityEngine;
 
 

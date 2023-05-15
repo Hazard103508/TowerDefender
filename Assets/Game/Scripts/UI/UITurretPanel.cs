@@ -1,6 +1,5 @@
 using System;
 using TowerDefender.Game.Environment;
-using TowerDefender.Game.ScriptableObjects;
 using UnityEngine;
 
 namespace TowerDefender.Game.UI

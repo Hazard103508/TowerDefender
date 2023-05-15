@@ -1,7 +1,6 @@
 using TowerDefender.Game.ScriptableObjects;
 using TowerDefender.Game.UI;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 namespace TowerDefender.Game.Environment
 {
@@ -9,7 +8,7 @@ namespace TowerDefender.Game.Environment
     {
         [SerializeField] EnemyProfile enemyProfile;
         [SerializeField] UILifeBar uILifeBar;
-        
+
         public Vector3 GoalPosition;
 
         private void Awake()

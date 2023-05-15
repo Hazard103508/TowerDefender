@@ -1,4 +1,3 @@
-using Newtonsoft.Json.Linq;
 using TowerDefender.Game.ScriptableObjects;
 using TowerDefender.Game.UI;
 using UnityEngine;

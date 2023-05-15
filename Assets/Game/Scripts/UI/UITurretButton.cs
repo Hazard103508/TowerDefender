@@ -1,10 +1,8 @@
 using TowerDefender.Application.Services;
 using TowerDefender.Game.Environment;
-using TowerDefender.Game.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using static UnityEngine.GraphicsBuffer;
 
 namespace TowerDefender.Game.UI
 {
@@ -20,7 +18,7 @@ namespace TowerDefender.Game.UI
         private void Awake()
         {
             _button = GetComponent<Button>();
-            
+
         }
         private void Start() => AllServices.CoinService.OnCoinsChanged.AddListener(OnCoinsChanged);
         private void OnDestroy() => AllServices.CoinService.OnCoinsChanged.RemoveListener(OnCoinsChanged);
