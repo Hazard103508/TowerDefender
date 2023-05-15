@@ -1,21 +1,20 @@
 using System;
-using TowerDefender.Game.Environment;
+using TowerDefender.Application.Services;
 using UnityEngine;
 
 namespace TowerDefender.Game.UI
 {
     public class UITurretPanel : MonoBehaviour
     {
-        [SerializeField] private Turret[] turretPrefabs;
         [SerializeField] private UITurretButton buttonPrefab;
 
-        private void Awake()
+        private void Start()
         {
             InstantiateButtons();
         }
         private void InstantiateButtons()
         {
-            Array.ForEach(turretPrefabs, t =>
+            Array.ForEach(AllServices.MatchService.DefaultMatchProfile.Turrets, t =>
             {
                 var btn = Instantiate(buttonPrefab, transform);
                 btn.gameObject.SetActive(true);

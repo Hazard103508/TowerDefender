@@ -9,7 +9,6 @@ namespace TowerDefender.Application.Services
 
         public CoinService()
         {
-            _coins = 30; // TEMPORAL..
             OnCoinsChanged = new UnityEvent();
         }
 

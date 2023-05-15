@@ -806,11 +806,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8674679683388646374, guid: ce25f632ee5da9f44bbf2c234826cfa3, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8674679683388646374, guid: ce25f632ee5da9f44bbf2c234826cfa3, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce25f632ee5da9f44bbf2c234826cfa3, type: 3}
@@ -1374,6 +1374,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Creep-small
       objectReference: {fileID: 0}
+    - target: {fileID: 6062474898863262898, guid: cc1690cde1bfb49158f54df1062eaf1a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc1690cde1bfb49158f54df1062eaf1a, type: 3}
 --- !u!4 &1173421077 stripped
@@ -1647,7 +1651,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf4c803a4bf5fa5419feb975e82476bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTowerProfile: {fileID: 11400000, guid: 85065bd8249afc3479a42f8c7b3ba365, type: 2}
   uILifeBar: {fileID: 709206848}
 --- !u!1001 &1431058235
 PrefabInstance:
@@ -1832,6 +1835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984161ef2fe2b984fbbf5508f331c918, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  matchProfile: {fileID: 11400000, guid: 7dad9542e9352da499fd3179a293372d, type: 2}
 --- !u!4 &1468621704
 Transform:
   m_ObjectHideFlags: 0
@@ -2315,7 +2319,7 @@ PrefabInstance:
     - target: {fileID: 1056815382991749999, guid: 2800247602a22614e9a0542ce8da29e9, type: 3}
       propertyPath: turretRoot
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 429086409}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2800247602a22614e9a0542ce8da29e9, type: 3}
 --- !u!1001 &2664209775385113902
