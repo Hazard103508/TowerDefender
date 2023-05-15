@@ -12,7 +12,6 @@ namespace TowerDefender.Application
         {
             ServiceLocator.Initiailze();
             ServiceLocator.Current.Register<ICoinService>(new CoinService());
-            ServiceLocator.Current.Register<ILifeService>(new LifeService());
             AllServices.Load();
         }
     }
