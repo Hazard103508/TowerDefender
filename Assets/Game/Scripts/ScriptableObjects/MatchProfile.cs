@@ -10,5 +10,7 @@ namespace TowerDefender.Game.ScriptableObjects
         public int HP;
         public Vector3 TowerPosition;
         public Turret[] Turrets;
+        public Enemy[] Enemies;
+        public Vector3[] SpawnPoints;
     }
 }

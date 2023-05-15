@@ -13,7 +13,6 @@ namespace TowerDefender.Game.Environment
         private void Start() // TODO - AWAKE
         {
             uILifeBar.CurrentHP = uILifeBar.MaxHP = enemyProfile.DefaultHP;
-            transform.LookAt(AllServices.MatchService.DefaultMatchProfile.TowerPosition);
         }
         private void Update()
         {
