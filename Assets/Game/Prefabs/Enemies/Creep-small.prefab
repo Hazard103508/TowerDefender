@@ -399,6 +399,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyProfile: {fileID: 11400000, guid: 0832192ead4c61c41a4648f6f35b46e1, type: 2}
   uILifeBar: {fileID: 8674679684279737989}
+  onKilled:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &4998079944408135084
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -616,12 +619,31 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8674679682822805180, guid: ce25f632ee5da9f44bbf2c234826cfa3, type: 3}
   m_PrefabInstance: {fileID: 1798899769}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 8674679684279738104}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00c12aa552e806545806b69f74873fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &8674679684279738104 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8674679682822805185, guid: ce25f632ee5da9f44bbf2c234826cfa3, type: 3}
+  m_PrefabInstance: {fileID: 1798899769}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4597229930285730501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8674679684279738104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebeaf2d5345bbff4cadf771f296ce2f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attachObject: {fileID: 6062474898863262898}
+  _offSet: {x: 0, y: -25}
 --- !u!224 &8674679684279738107 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8674679682822805186, guid: ce25f632ee5da9f44bbf2c234826cfa3, type: 3}

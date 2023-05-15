@@ -70,7 +70,6 @@ namespace TowerDefender.Game.Environment
 
             if (_enemyKlled == CurrentWave.EnemyCount)
             {
-                print("All killed");
                 if (waveIndex < _wavesProfile.Length - 1)
                 {
                     waveIndex++;
