@@ -1,4 +1,5 @@
 using System;
+using TowerDefender.Game.Environment;
 using TowerDefender.Game.ScriptableObjects;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ namespace TowerDefender.Game.UI
 {
     public class UITurretPanel : MonoBehaviour
     {
-        [SerializeField] private TurretProfile[] turretProfiles;
+        [SerializeField] private Turret[] turretPrefabs;
         [SerializeField] private UITurretButton buttonPrefab;
 
         private void Awake()
@@ -15,7 +16,7 @@ namespace TowerDefender.Game.UI
         }
         private void InstantiateButtons()
         {
-            Array.ForEach(turretProfiles, t =>
+            Array.ForEach(turretPrefabs, t =>
             {
                 var btn = Instantiate(buttonPrefab, transform);
                 btn.gameObject.SetActive(true);

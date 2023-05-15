@@ -1315,9 +1315,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f446a775583d73f48836568b12b4d73d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turretProfiles:
-  - {fileID: 11400000, guid: 1ed03648e6b94644097b578407dfff5c, type: 2}
-  - {fileID: 11400000, guid: 49d096b256922d24694de039de5d9741, type: 2}
+  turretPrefabs:
+  - {fileID: -3981977248232847860, guid: ad95cf0532fb840edb99302196037be4, type: 3}
+  - {fileID: 9183952259404623234, guid: 2db840306d61e4e1d8ed7a2a17e59dc5, type: 3}
   buttonPrefab: {fileID: 182787637}
 --- !u!1001 &1173421076
 PrefabInstance:
@@ -2315,7 +2315,7 @@ PrefabInstance:
     - target: {fileID: 1056815382991749999, guid: 2800247602a22614e9a0542ce8da29e9, type: 3}
       propertyPath: turretRoot
       value: 
-      objectReference: {fileID: 429086409}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2800247602a22614e9a0542ce8da29e9, type: 3}
 --- !u!1001 &2664209775385113902

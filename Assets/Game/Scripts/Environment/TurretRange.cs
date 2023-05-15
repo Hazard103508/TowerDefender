@@ -4,12 +4,8 @@ namespace TowerDefender.Game.Environment
 {
     public class TurretRange : MonoBehaviour
     {
-        private LineRenderer _circleRender;
+        [SerializeField] private LineRenderer _circleRender;
 
-        private void Awake()
-        {
-            _circleRender = GetComponent<LineRenderer>();
-        }
         public void DrawCircle(int steps, float radius)
         {
             _circleRender.positionCount = steps + 1;

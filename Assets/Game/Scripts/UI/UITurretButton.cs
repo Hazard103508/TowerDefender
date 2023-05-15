@@ -1,8 +1,10 @@
 using TowerDefender.Application.Services;
+using TowerDefender.Game.Environment;
 using TowerDefender.Game.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using static UnityEngine.GraphicsBuffer;
 
 namespace TowerDefender.Game.UI
 {
@@ -13,7 +15,7 @@ namespace TowerDefender.Game.UI
         [SerializeField] private Image _icon;
         [SerializeField] private Text _label;
         private Button _button;
-        private TurretProfile _turretProfile;
+        private Turret _turret;
 
         private void Awake()
         {
@@ -22,19 +24,19 @@ namespace TowerDefender.Game.UI
         }
         private void Start() => AllServices.CoinService.OnCoinsChanged.AddListener(OnCoinsChanged);
         private void OnDestroy() => AllServices.CoinService.OnCoinsChanged.RemoveListener(OnCoinsChanged);
-        public void Initialize(TurretProfile turretProfile)
+        public void Initialize(Turret turret)
         {
-            _turretProfile = turretProfile;
-            _icon.sprite = turretProfile.icon;
-            _label.text = turretProfile.BuildCost.ToString();
+            _turret = turret;
+            _icon.sprite = turret.TurretProfile.icon;
+            _label.text = turret.TurretProfile.BuildCost.ToString();
 
             _button.onClick.AddListener(OnButtonClick);
         }
         private void OnButtonClick()
         {
-            turretSpawner.Show(_turretProfile);
+            turretSpawner.Show(_turret);
             EventSystem.current.SetSelectedGameObject(null);
         }
-        private void OnCoinsChanged() => _button.interactable = AllServices.CoinService.Coins >= _turretProfile.BuildCost;
+        private void OnCoinsChanged() => _button.interactable = AllServices.CoinService.Coins >= _turret.TurretProfile.BuildCost;
     }
 }

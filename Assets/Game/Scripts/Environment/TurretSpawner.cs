@@ -1,6 +1,7 @@
 using System.Reflection;
 using TowerDefender.Application.Services;
 using TowerDefender.Commons;
+using TowerDefender.Game.Environment;
 using TowerDefender.Game.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -14,8 +15,7 @@ namespace TowerDefender.Game.UI
         [SerializeField] private AudioSource _buildAudioSource;
 
         private AttachObjectToMouse _attachObjectToMouse;
-        private TurretProfile _turretProfile;
-        private GameObject turret;
+        private Turret _turret;
 
         private void Awake()
         {
@@ -27,47 +27,41 @@ namespace TowerDefender.Game.UI
             DisableTurretSpawner();
         }
 
-        public void Show(TurretProfile turretProfile)
+        public void Show(Turret turret)
         {
             ClearSelectedTurret();
 
-            _turretProfile = turretProfile;
+            _turret = turret;
             InstantiateTurret();
         }
         private void InstantiateTurret()
         {
-            turret = Instantiate(_turretProfile.Prefabs.Turret, transform);
-            turret.name = _turretProfile.Prefabs.Turret.name;
-
-            var maxRange = Instantiate(_turretProfile.Prefabs.Range, turret.transform);
-            maxRange.name = "Range";
-            maxRange.DrawCircle(20, _turretProfile.RadiusRange);
-        }
+            _turret = Instantiate(_turret, transform);
+            _turret.name = _turret.TurretProfile.name;
+         }
         private void ClearSelectedTurret()
         {
-            if (turret != null)
-                Destroy(turret);
-
-            _turretProfile = null;
+            if (_turret != null)
+                Destroy(_turret.gameObject);
         }
         private void PlaceTurret()
         {
-            if (turret == null)
+            if (_turret == null)
                 return;
-
+            
             if (EventSystem.current.IsPointerOverGameObject())
                 return;
-
+            
             if (Input.GetMouseButtonDown(0))
             {
-                var finalTurret = Instantiate(turret, turret.transform.position, Quaternion.identity, turretRoot);
-                finalTurret.name = turret.name;
-
-                AllServices.CoinService.Remove(_turretProfile.BuildCost);
+                var finalTurret = Instantiate(_turret, _turret.transform.position, Quaternion.identity, turretRoot);
+                finalTurret.name = _turret.name;
+            
+                AllServices.CoinService.Remove(_turret.TurretProfile.BuildCost);
                 _buildAudioSource.Play();
             }
-
-            if (_turretProfile.BuildCost > AllServices.CoinService.Coins)
+            
+            if (_turret.TurretProfile.BuildCost > AllServices.CoinService.Coins)
                 ClearSelectedTurret();
         }
         private void DisableTurretSpawner()
