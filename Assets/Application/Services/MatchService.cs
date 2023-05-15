@@ -43,7 +43,9 @@ namespace TowerDefender.Application.Services
     public enum MatchState
     {
         CoolDown,
-        Invasion,
-        GameOver
+        WaveBegan,
+        WaveEnded,
+        Win,
+        Lose,
     }
 }

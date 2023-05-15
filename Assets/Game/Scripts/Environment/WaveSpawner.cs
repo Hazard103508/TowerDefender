@@ -10,25 +10,27 @@ namespace TowerDefender.Game.Environment
 {
     public class WaveSpawner : MonoBehaviour
     {
-        [SerializeField] private WaveProfile waveProfile;
-        [SerializeField] private Transform EnemiesRoot;
+        [SerializeField] private WaveProfile[] _wavesProfile;
+        [SerializeField] private Transform _enemiesRoot;
 
-        private int _spawnCount = 0;
+        private int waveIndex = 0;
+        private int _enemyKlled = 0;
+
+        public WaveProfile CurrentWave => _wavesProfile[waveIndex];
 
         private void Start()
         {
-            InitializeSpawn();  // ver...
-
+            StartWave();  // ver...
         }
-        public void InitializeSpawn()
+        public void StartWave()
         {
-            _spawnCount = 0;
+            _enemyKlled = 0;
             AllServices.MatchService.MatchState = MatchState.CoolDown;
             StartCoroutine(ShowColdDown());
         }
         private IEnumerator ShowColdDown()
         {
-            int _timer = waveProfile.CoolDownTime;
+            int _timer = CurrentWave.CoolDownTime;
 
             do
             {
@@ -38,21 +40,45 @@ namespace TowerDefender.Game.Environment
             while (_timer > 0);
 
             AllServices.MatchService.Timer = 0;
-            AllServices.MatchService.MatchState = MatchState.Invasion;
-            Invoke("SpawnEnemy", 0);
+            AllServices.MatchService.MatchState = MatchState.WaveBegan;
+
+            StartCoroutine(SpawnEnemy());
         }
-        private void SpawnEnemy()
+        private IEnumerator SpawnEnemy()
         {
-            var prefab = AllServices.MatchService.DefaultMatchProfile.Enemies.Choose(1).First();
-            var position = AllServices.MatchService.DefaultMatchProfile.SpawnPoints.Choose(1).First();
+            int _spawnCount = 0;
 
-            var enemy = Instantiate(prefab, EnemiesRoot);
-            enemy.transform.position = position;
-            enemy.transform.LookAt(AllServices.MatchService.DefaultMatchProfile.TowerPosition);
-            _spawnCount++;
+            while (_spawnCount < CurrentWave.EnemyCount)
+            {
+                var prefab = AllServices.MatchService.DefaultMatchProfile.Enemies.Choose(1).First();
+                var position = AllServices.MatchService.DefaultMatchProfile.SpawnPoints.Choose(1).First();
 
-            if (_spawnCount < waveProfile.EnemyCount)
-                Invoke("SpawnEnemy", waveProfile.SpawnFrequency);
+                var enemy = Instantiate(prefab, _enemiesRoot);
+                enemy.transform.position = position;
+                enemy.transform.LookAt(AllServices.MatchService.DefaultMatchProfile.TowerPosition);
+                enemy.onKilled.AddListener(OnEnemyKilled);
+                _spawnCount++;
+
+                if (_spawnCount < CurrentWave.EnemyCount)
+                    yield return new WaitForSeconds(CurrentWave.SpawnFrequency);
+            }
+            AllServices.MatchService.MatchState = MatchState.WaveEnded;
+        }
+        private void OnEnemyKilled(Enemy enemy)
+        {
+            _enemyKlled++;
+
+            if (_enemyKlled == CurrentWave.EnemyCount)
+            {
+                print("All killed");
+                if (waveIndex < _wavesProfile.Length - 1)
+                {
+                    waveIndex++;
+                    StartWave();
+                }
+                else
+                    AllServices.MatchService.MatchState = MatchState.Win;
+            }
         }
     }
 }

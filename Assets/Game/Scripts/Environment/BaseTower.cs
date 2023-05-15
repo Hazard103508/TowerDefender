@@ -27,7 +27,8 @@ namespace TowerDefender.Game.Environment
             {
                 var enemy = other.gameObject.GetComponent<Enemy>();
                 TakeDamage(enemy.EnemyProfile.DamagePoint);
-                Destroy(enemy.gameObject);
+
+                enemy.Kill(false);
             }
         }
     }

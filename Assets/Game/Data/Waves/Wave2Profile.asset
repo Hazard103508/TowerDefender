@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f0d10d7401f4be41b2cd1f812fe20a1, type: 3}
   m_Name: Wave2Profile
   m_EditorClassIdentifier: 
-  EnemyCount: 15
-  SpawnFrequency: 1
-  CoolDownTime: 3
+  EnemyCount: 10
+  SpawnFrequency: 3
+  CoolDownTime: 8

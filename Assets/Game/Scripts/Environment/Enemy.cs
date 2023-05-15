@@ -2,6 +2,7 @@ using TowerDefender.Application.Services;
 using TowerDefender.Game.ScriptableObjects;
 using TowerDefender.Game.UI;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace TowerDefender.Game.Environment
 {
@@ -9,6 +10,8 @@ namespace TowerDefender.Game.Environment
     {
         public EnemyProfile EnemyProfile;
         [SerializeField] UILifeBar uILifeBar;
+
+        public UnityEvent<Enemy> onKilled;
 
         private void Start() // TODO - AWAKE
         {
@@ -22,6 +25,12 @@ namespace TowerDefender.Game.Environment
         public void AddDamage(int amount)
         {
             uILifeBar.CurrentHP -= amount;
+        }
+
+        public void Kill(bool dropRewad)
+        {
+            onKilled.Invoke(this);
+            Destroy(gameObject);
         }
     }
 }
