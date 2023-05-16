@@ -1,8 +1,8 @@
+using TowerDefender.Commons.Enums;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityShared.Enums;
 
-namespace UnityShared.Behaviours.Handlers
+namespace TowerDefender.Commons.Behaviours
 {
     [RequireComponent(typeof(CanvasGroup))]
     [RequireComponent(typeof(Animator))]

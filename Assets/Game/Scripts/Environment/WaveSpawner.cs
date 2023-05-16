@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TowerDefender.Application.Services;
 using TowerDefender.Commons;
+using TowerDefender.Commons.Extensions;
 using TowerDefender.Game.ScriptableObjects;
 using UnityEngine;
 
@@ -10,13 +11,12 @@ namespace TowerDefender.Game.Environment
 {
     public class WaveSpawner : MonoBehaviour
     {
-        [SerializeField] private WaveProfile[] _wavesProfile;
         [SerializeField] private Transform _enemiesRoot;
 
         private int waveIndex = 0;
         private int _enemyKlled = 0;
 
-        public WaveProfile CurrentWave => _wavesProfile[waveIndex];
+        public WaveProfile CurrentWave => AllServices.MatchService.DefaultMatchProfile.Waves[waveIndex];
 
         private void Start()
         {
@@ -73,9 +73,10 @@ namespace TowerDefender.Game.Environment
         {
             _enemyKlled++;
 
+            print(_enemyKlled);
             if (_enemyKlled == CurrentWave.EnemyCount)
             {
-                if (waveIndex < _wavesProfile.Length - 1)
+                if (waveIndex < AllServices.MatchService.DefaultMatchProfile.Waves.Length - 1)
                 {
                     waveIndex++;
                     StartWave();

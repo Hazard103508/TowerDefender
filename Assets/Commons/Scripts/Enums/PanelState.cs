@@ -1,4 +1,4 @@
-namespace UnityShared.Enums
+namespace TowerDefender.Commons.Enums
 {
     public enum PanelState
     {

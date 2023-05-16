@@ -11,6 +11,7 @@ namespace TowerDefender.Game.ScriptableObjects
         public Vector3 TowerPosition;
         public Turret[] Turrets;
         public Enemy[] Enemies;
+        public WaveProfile[] Waves;
         public Vector3[] SpawnPoints;
     }
 }

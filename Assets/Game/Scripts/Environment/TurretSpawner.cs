@@ -1,5 +1,5 @@
 using TowerDefender.Application.Services;
-using TowerDefender.Commons;
+using TowerDefender.Commons.Behaviours;
 using TowerDefender.Game.Environment;
 using UnityEngine;
 using UnityEngine.EventSystems;

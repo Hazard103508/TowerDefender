@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace TowerDefender.Commons
+namespace TowerDefender.Commons.Behaviours
 {
     public class AttachObjectToMouse : MonoBehaviour
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TowerDefender.Commons
+namespace TowerDefender.Commons.Extensions
 {
     public static class ArrayExtensions
     {

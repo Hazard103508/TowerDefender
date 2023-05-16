@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Wave2Profile
   m_EditorClassIdentifier: 
   EnemyCount: 10
-  SpawnFrequency: 3
+  SpawnFrequency: 2
   CoolDownTime: 8

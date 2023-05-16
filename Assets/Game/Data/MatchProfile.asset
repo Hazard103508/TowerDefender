@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MatchProfile
   m_EditorClassIdentifier: 
   Coins: 30
-  HP: 20
+  HP: 100
   TowerPosition: {x: 0, y: 0, z: 0}
   Turrets:
   - {fileID: -3981977248232847860, guid: ad95cf0532fb840edb99302196037be4, type: 3}
@@ -21,6 +21,10 @@ MonoBehaviour:
   Enemies:
   - {fileID: 1173421079, guid: cc1690cde1bfb49158f54df1062eaf1a, type: 3}
   - {fileID: 1267667192118922173, guid: 03dfb865ef6474e68a8586ba6eb0492d, type: 3}
+  Waves:
+  - {fileID: 11400000, guid: 9a837eac0e613b74a828174a8ca8d0f8, type: 2}
+  - {fileID: 11400000, guid: 9aeb5932878d13a4a8ffc28372f99d4b, type: 2}
+  - {fileID: 11400000, guid: a3eca6cf93eae844eafda5cb1f1cfa02, type: 2}
   SpawnPoints:
   - {x: -27, y: 0, z: 19}
   - {x: -27, y: 0, z: -19}

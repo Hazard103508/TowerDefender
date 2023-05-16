@@ -1,7 +1,6 @@
 using TowerDefender.Application.Services;
+using TowerDefender.Commons.Behaviours;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityShared.Behaviours.Handlers;
 
 namespace TowerDefender.Game.UI
 {
