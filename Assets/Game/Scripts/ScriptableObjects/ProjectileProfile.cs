@@ -12,7 +12,7 @@ namespace TowerDefender.Game.ScriptableObjects
     }
 
     public enum ProjectileEffect
-    {
+    { 
         Damage,
         Freezing
     }

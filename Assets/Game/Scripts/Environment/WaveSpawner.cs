@@ -1,6 +1,8 @@
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using TowerDefender.Application.Services;
+using TowerDefender.Commons;
 using TowerDefender.Commons.Extensions;
 using TowerDefender.Game.ScriptableObjects;
 using UnityEngine;
@@ -22,6 +24,9 @@ namespace TowerDefender.Game.Environment
         }
         public void StartWave()
         {
+            if (AllServices.MatchService.IsGameOver)
+                return;
+
             _enemyKlled = 0;
             AllServices.MatchService.MatchState = MatchState.CoolDown;
             StartCoroutine(ShowColdDown());
