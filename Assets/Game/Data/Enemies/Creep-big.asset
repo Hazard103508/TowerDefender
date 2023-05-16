@@ -15,4 +15,4 @@ MonoBehaviour:
   DefaultHP: 500
   Speed: 3
   DamagePoint: 30
-  goldReward: 10
+  goldReward: 2
