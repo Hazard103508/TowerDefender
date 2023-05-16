@@ -12,11 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7be8a00e8c52167419145dab13e50e39, type: 3}
   m_Name: FreezingTurretProfile
   m_EditorClassIdentifier: 
-  Prefabs:
-    Turret: {fileID: 3312728997542272041, guid: 2db840306d61e4e1d8ed7a2a17e59dc5, type: 3}
-    Range: {fileID: 1608274731613677189, guid: 54ad728281fe70f4b87f7ec8f5d5e556, type: 3}
-  ProjectileProfile: {fileID: 0}
+  ProjectileProfile: {fileID: 11400000, guid: cc160a93c4cdff74eb4dbd5bba4bc1fa, type: 2}
   icon: {fileID: 21300000, guid: 6619a39ec0affd745a01fe970d0b00f8, type: 3}
   RadiusRange: 10
-  FiringFrequency: 3
+  FiringCoolDown: 3
   BuildCost: 10

@@ -48,6 +48,7 @@ namespace TowerDefender.Game.UI
             {
                 var finalTurret = Instantiate(_turret, _turret.transform.position, Quaternion.identity, turretRoot);
                 finalTurret.name = _turret.name;
+                finalTurret.AllowShoot = true;
 
                 AllServices.CoinService.Remove(_turret.TurretProfile.BuildCost);
                 _buildAudioSource.Play();

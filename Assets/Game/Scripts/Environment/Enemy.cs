@@ -25,9 +25,14 @@ namespace TowerDefender.Game.Environment
         public void AddDamage(int amount)
         {
             uILifeBar.CurrentHP -= amount;
+            if (uILifeBar.CurrentHP == 0)
+            {
+                AllServices.CoinService.Add(EnemyProfile.goldReward);
+                Kill();
+            }
         }
 
-        public void Kill(bool dropRewad)
+        public void Kill()
         {
             onKilled.Invoke(this);
             Destroy(gameObject);

@@ -9,7 +9,7 @@ namespace TowerDefender.Game.ScriptableObjects
         public ProjectileProfile ProjectileProfile;
         public Sprite icon;
         public float RadiusRange;
-        public float FiringFrequency;
+        public float FiringCoolDown;
         public int BuildCost;
     }
 }
