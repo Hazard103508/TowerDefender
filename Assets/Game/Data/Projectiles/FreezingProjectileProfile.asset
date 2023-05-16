@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: FreezingProjectileProfile
   m_EditorClassIdentifier: 
   EffectType: 1
-  EffectValue: 1
-  Speed: 20
+  EffectValue: 0.1
+  Speed: 15

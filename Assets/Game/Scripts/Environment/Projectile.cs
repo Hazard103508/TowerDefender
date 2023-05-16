@@ -32,7 +32,16 @@ namespace TowerDefender.Game.Environment
             if (other.gameObject != null && other.gameObject.CompareTag("Enemy"))
             {
                 var enemy = other.gameObject.GetComponent<Enemy>();
-                enemy.AddDamage(ProjectileProfile.EffectValue);
+
+                switch (ProjectileProfile.EffectType)
+                {
+                    case ProjectileEffect.Damage:
+                        enemy.AddDamage((int)ProjectileProfile.EffectValue);
+                        break;
+                    case ProjectileEffect.Freezing:
+                        enemy.AlterSpeed(ProjectileProfile.EffectValue);
+                        break;
+                }
             }
         }
     }

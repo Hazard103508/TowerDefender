@@ -16,8 +16,8 @@ MonoBehaviour:
   HP: 500
   TowerPosition: {x: 0, y: 0, z: 0}
   Turrets:
-  - {fileID: 9183952259404623234, guid: 2db840306d61e4e1d8ed7a2a17e59dc5, type: 3}
   - {fileID: -3981977248232847860, guid: ad95cf0532fb840edb99302196037be4, type: 3}
+  - {fileID: 9183952259404623234, guid: 2db840306d61e4e1d8ed7a2a17e59dc5, type: 3}
   Enemies:
   - {fileID: 1173421079, guid: cc1690cde1bfb49158f54df1062eaf1a, type: 3}
   - {fileID: 1267667192118922173, guid: 03dfb865ef6474e68a8586ba6eb0492d, type: 3}

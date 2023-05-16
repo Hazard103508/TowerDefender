@@ -7,7 +7,7 @@ namespace TowerDefender.Game.ScriptableObjects
     public class ProjectileProfile : ScriptableObject
     {
         public ProjectileEffect EffectType;
-        public int EffectValue;
+        public float EffectValue;
         public float Speed;
     }
 

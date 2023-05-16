@@ -178,6 +178,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurretRange
       objectReference: {fileID: 0}
+    - target: {fileID: 3976464922233242794, guid: 54ad728281fe70f4b87f7ec8f5d5e556, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976464922233242794, guid: 54ad728281fe70f4b87f7ec8f5d5e556, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976464922233242794, guid: 54ad728281fe70f4b87f7ec8f5d5e556, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976464922233242794, guid: 54ad728281fe70f4b87f7ec8f5d5e556, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976464922233242794, guid: 54ad728281fe70f4b87f7ec8f5d5e556, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3976464922233242795, guid: 54ad728281fe70f4b87f7ec8f5d5e556, type: 3}
       propertyPath: m_RootOrder
       value: 1
