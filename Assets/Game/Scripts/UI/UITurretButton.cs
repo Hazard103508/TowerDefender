@@ -30,6 +30,9 @@ namespace TowerDefender.Game.UI
         }
         private void OnButtonClick()
         {
+            if (AllServices.MatchService.IsGameOver)
+                return;
+
             turretSpawner.Show(_turret);
             EventSystem.current.SetSelectedGameObject(null);
         }

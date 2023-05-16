@@ -13,12 +13,21 @@ namespace TowerDefender.Game.UI
         [SerializeField] private AttachObjectToMouse _attachObjectToMouse;
         private Turret _turret;
 
+        private void Start() // TODO - AWAKE
+        {
+            AllServices.MatchService.OnMatchStateChanged.AddListener(OnMatchStateChanged);
+        }
+        private void OnDestroy() => AllServices.MatchService.OnMatchStateChanged.RemoveListener(OnMatchStateChanged);
         private void Update()
         {
             PlaceTurret();
             DisableTurretSpawner();
         }
-
+        private void OnMatchStateChanged()
+        {
+            if (AllServices.MatchService.IsGameOver)
+                ClearSelectedTurret();
+        }
         public void Show(Turret turret)
         {
             ClearSelectedTurret();
@@ -38,6 +47,9 @@ namespace TowerDefender.Game.UI
         }
         private void PlaceTurret()
         {
+            if (AllServices.MatchService.IsGameOver)
+                return;
+
             if (_turret == null)
                 return;
 

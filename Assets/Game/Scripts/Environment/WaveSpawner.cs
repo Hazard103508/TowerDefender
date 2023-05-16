@@ -61,8 +61,13 @@ namespace TowerDefender.Game.Environment
 
                 if (_spawnCount < CurrentWave.EnemyCount)
                     yield return new WaitForSeconds(CurrentWave.SpawnFrequency);
+
+                if (AllServices.MatchService.IsGameOver)
+                    break;
             }
-            AllServices.MatchService.MatchState = MatchState.WaveEnded;
+
+            if (!AllServices.MatchService.IsGameOver)
+                AllServices.MatchService.MatchState = MatchState.WaveEnded;
         }
         private void OnEnemyKilled(Enemy enemy)
         {
