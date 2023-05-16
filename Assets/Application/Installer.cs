@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 
 namespace TowerDefender.Application
 {
-    [InitializeOnLoad]
     public class Installer : MonoBehaviour
     {
         [SerializeField] private MatchProfile matchProfile;
