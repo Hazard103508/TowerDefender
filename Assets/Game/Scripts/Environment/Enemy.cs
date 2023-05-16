@@ -15,7 +15,7 @@ namespace TowerDefender.Game.Environment
         public UnityEvent<Enemy> onKilled;
         private float _speedModifier;
 
-        private void Start() // TODO - AWAKE
+        private void Awake()
         {
             _speedModifier = 1;
             uILifeBar.CurrentHP = uILifeBar.MaxHP = EnemyProfile.DefaultHP;

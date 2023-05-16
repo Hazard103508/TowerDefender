@@ -9,7 +9,7 @@ namespace TowerDefender.Game.UI
         [SerializeField] private PanelHandler _panelWin;
         [SerializeField] private PanelHandler _panelLose;
 
-        private void Start() // TODO - AWAKE
+        private void Awake()
         {
             AllServices.MatchService.OnMatchStateChanged.AddListener(OnMatchStateChanged);
         }

@@ -15,7 +15,7 @@ namespace TowerDefender.Game.UI
         [SerializeField] private Button _button;
         private Turret _turret;
 
-        private void Start() // TODO - AWAKE
+        private void Awake()
         {
             AllServices.CoinService.OnCoinsChanged.AddListener(OnCoinsChanged);
         }

@@ -8,7 +8,7 @@ namespace TowerDefender.Game.UI
     {
         [SerializeField] private UITurretButton buttonPrefab;
 
-        private void Start() // TODO - AWAKE
+        private void Awake()
         {
             InstantiateButtons();
         }

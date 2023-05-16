@@ -8,7 +8,7 @@ namespace TowerDefender.Game.UI
     {
         [SerializeField] private Text _label;
 
-        private void Start() // TODO - AWAKE
+        private void Awake()
         {
             AllServices.CoinService.OnCoinsChanged.AddListener(OnCoinsChanged);
             AllServices.CoinService.Add(AllServices.MatchService.DefaultMatchProfile.Coins);

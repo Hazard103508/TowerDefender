@@ -901,10 +901,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0d0f12b445201041bdefe2b553f0dac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wavesProfile:
-  - {fileID: 11400000, guid: 9a837eac0e613b74a828174a8ca8d0f8, type: 2}
-  - {fileID: 11400000, guid: 9aeb5932878d13a4a8ffc28372f99d4b, type: 2}
-  - {fileID: 11400000, guid: a3eca6cf93eae844eafda5cb1f1cfa02, type: 2}
   _enemiesRoot: {fileID: 907504540}
 --- !u!1 &996289711
 GameObject:
@@ -1276,51 +1272,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1458976338}
   m_CullTransparentMesh: 1
---- !u!1 &1468621702
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1468621704}
-  - component: {fileID: 1468621703}
-  m_Layer: 0
-  m_Name: Installer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1468621703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1468621702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 984161ef2fe2b984fbbf5508f331c918, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  matchProfile: {fileID: 11400000, guid: 7dad9542e9352da499fd3179a293372d, type: 2}
---- !u!4 &1468621704
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1468621702}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1475774545
 GameObject:
   m_ObjectHideFlags: 0
@@ -2111,6 +2062,10 @@ PrefabInstance:
     - target: {fileID: 6199234821020005996, guid: 0b055bf7caf0ad24690576fbacaa311f, type: 3}
       propertyPath: m_Constraints
       value: 126
+      objectReference: {fileID: 0}
+    - target: {fileID: 6264749624131264203, guid: 0b055bf7caf0ad24690576fbacaa311f, type: 3}
+      propertyPath: m_Interactable
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6264749624771554286, guid: 0b055bf7caf0ad24690576fbacaa311f, type: 3}
       propertyPath: m_AnchorMax.x

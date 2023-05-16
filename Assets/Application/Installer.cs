@@ -3,6 +3,7 @@ using TowerDefender.Application.Services;
 using TowerDefender.Game.ScriptableObjects;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace TowerDefender.Application
 {
@@ -17,6 +18,8 @@ namespace TowerDefender.Application
             ServiceLocator.Current.Register<IMatchService>(new MatchService(matchProfile));
             ServiceLocator.Current.Register<ICoinService>(new CoinService());
             AllServices.Load();
+
+            SceneManager.LoadSceneAsync("MainScene", LoadSceneMode.Single);
         }
     }
 }

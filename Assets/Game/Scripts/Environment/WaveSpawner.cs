@@ -73,7 +73,6 @@ namespace TowerDefender.Game.Environment
         {
             _enemyKlled++;
 
-            print(_enemyKlled);
             if (_enemyKlled == CurrentWave.EnemyCount)
             {
                 if (waveIndex < AllServices.MatchService.DefaultMatchProfile.Waves.Length - 1)

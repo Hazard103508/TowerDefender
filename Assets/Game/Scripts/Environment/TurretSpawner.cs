@@ -13,7 +13,7 @@ namespace TowerDefender.Game.UI
         [SerializeField] private AttachObjectToMouse _attachObjectToMouse;
         private Turret _turret;
 
-        private void Start() // TODO - AWAKE
+        private void Awake()
         {
             AllServices.MatchService.OnMatchStateChanged.AddListener(OnMatchStateChanged);
         }
