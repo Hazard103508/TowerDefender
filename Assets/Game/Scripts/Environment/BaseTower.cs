@@ -1,5 +1,4 @@
 using TowerDefender.Application.Services;
-using TowerDefender.Game.ScriptableObjects;
 using TowerDefender.Game.UI;
 using UnityEngine;
 

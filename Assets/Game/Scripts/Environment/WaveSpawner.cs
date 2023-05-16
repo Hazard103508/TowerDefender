@@ -1,8 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using TowerDefender.Application.Services;
-using TowerDefender.Commons;
 using TowerDefender.Commons.Extensions;
 using TowerDefender.Game.ScriptableObjects;
 using UnityEngine;

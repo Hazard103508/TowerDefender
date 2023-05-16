@@ -1,4 +1,3 @@
-using System.Collections;
 using TowerDefender.Application.Services;
 using TowerDefender.Game.ScriptableObjects;
 using TowerDefender.Game.UI;
@@ -28,7 +27,7 @@ namespace TowerDefender.Game.Environment
 
         public void AddDamage(int amount)
         {
-            if (uILifeBar.CurrentHP == 0) 
+            if (uILifeBar.CurrentHP == 0)
                 return; // validacion para evitar que una segunda bala asesine al mismo enemigo
 
             uILifeBar.CurrentHP -= amount;
