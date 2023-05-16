@@ -22,7 +22,8 @@ namespace TowerDefender.Game.Environment
         }
         private void Update()
         {
-            transform.position = Vector3.MoveTowards(transform.position, AllServices.MatchService.DefaultMatchProfile.TowerPosition, _speedModifier * EnemyProfile.Speed * Time.deltaTime);
+            if (!AllServices.MatchService.IsGameOver)
+                transform.position = Vector3.MoveTowards(transform.position, AllServices.MatchService.DefaultMatchProfile.TowerPosition, _speedModifier * EnemyProfile.Speed * Time.deltaTime);
         }
 
         public void AddDamage(int amount)

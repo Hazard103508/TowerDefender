@@ -20,6 +20,7 @@ namespace TowerDefender.Application.Services
                 OnMatchStateChanged.Invoke();
             }
         }
+        public bool IsGameOver => MatchState == MatchState.Lose || MatchState == MatchState.Win;
         public int Timer
         {
             get => _timer;

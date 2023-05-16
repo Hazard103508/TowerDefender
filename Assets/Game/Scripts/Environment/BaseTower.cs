@@ -20,6 +20,9 @@ namespace TowerDefender.Game.Environment
         {
             uILifeBar.CurrentHP -= amount;
             _damageAudio.Play();
+
+            if (uILifeBar.CurrentHP == 0)
+                AllServices.MatchService.MatchState = MatchState.Lose;
         }
         private void OnTriggerEnter(Collider other)
         {

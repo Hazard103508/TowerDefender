@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6230eb26006b0c14c909ec4de487f808, type: 3}
   m_Name: MatchProfile
   m_EditorClassIdentifier: 
-  Coins: 50
-  HP: 500
+  Coins: 30
+  HP: 200
   TowerPosition: {x: 0, y: 0, z: 0}
   Turrets:
   - {fileID: -3981977248232847860, guid: ad95cf0532fb840edb99302196037be4, type: 3}

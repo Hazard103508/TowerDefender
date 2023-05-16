@@ -14,6 +14,6 @@ namespace TowerDefender.Game.UI
         }
         private void OnDestroy() => AllServices.MatchService.OnMatchStateChanged.RemoveListener(OnMatchStateChanged);
 
-        private void OnMatchStateChanged() => _label.text = AllServices.MatchService.MatchState.ToString();
+        private void OnMatchStateChanged() => _label.text = AllServices.MatchService.IsGameOver ? string.Empty : AllServices.MatchService.MatchState.ToString();
     }
 }

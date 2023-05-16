@@ -1,3 +1,4 @@
+using TowerDefender.Application.Services;
 using TowerDefender.Game.ScriptableObjects;
 using UnityEngine;
 
@@ -29,7 +30,10 @@ namespace TowerDefender.Game.Environment
         {
             if (!AllowShoot)
                 return;
-        
+
+            if (AllServices.MatchService.IsGameOver)
+                return;
+
             if (other.gameObject != null && other.gameObject.CompareTag("Enemy"))
             {
                 if (_shootCooldown == 0)

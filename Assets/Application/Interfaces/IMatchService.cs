@@ -8,6 +8,7 @@ namespace TowerDefender.Application.Interfaces
     {
         MatchProfile DefaultMatchProfile { get; }
         MatchState MatchState { get; set; }
+        bool IsGameOver { get; }
         int Timer { get; set; }
 
         UnityEvent OnMatchStateChanged { get; set; }
