@@ -15,7 +15,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6631560805576656205
 Transform:
@@ -48,6 +48,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TurretProfile: {fileID: 11400000, guid: 49d096b256922d24694de039de5d9741, type: 2}
   turretRange: {fileID: 1186661011712746897}
+  projectile: {fileID: 0}
+  collider: {fileID: 0}
+  AllowShoot: 0
 --- !u!1 &3331154649744156603
 GameObject:
   m_ObjectHideFlags: 0

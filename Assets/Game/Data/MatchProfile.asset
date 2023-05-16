@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6230eb26006b0c14c909ec4de487f808, type: 3}
   m_Name: MatchProfile
   m_EditorClassIdentifier: 
-  Coins: 25
+  Coins: 50
   HP: 500
   TowerPosition: {x: 0, y: 0, z: 0}
   Turrets:

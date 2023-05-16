@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: RegularProjectileProfile
   m_EditorClassIdentifier: 
   EffectType: 0
-  EffectValue: 10
+  EffectValue: 50
   Speed: 20

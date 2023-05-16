@@ -9,7 +9,7 @@ namespace TowerDefender.Game.Environment
     public class Enemy : MonoBehaviour
     {
         public EnemyProfile EnemyProfile;
-        [SerializeField] UILifeBar uILifeBar;
+        [SerializeField] private UILifeBar uILifeBar;
 
         public UnityEvent<Enemy> onKilled;
 
